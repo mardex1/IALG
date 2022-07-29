@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-int multiplicacao(int num, int quantidade){
-	if(quantidade == 1){
-		return num;
-	}else if(quantidade == 2){
-		return num + num;
+int somasucessivas (int a, int b){
+	if(b==1){
+		return a;
+	}else if(b==0){
+		return 0;
 	}else{
-		return multiplicacao(num, quantidade)
+		return a+somasucessivas(a,b-1);
 	}
 }
 		
@@ -17,7 +17,7 @@ int main (){
 	
 	cin >> num1 >> num2;
 	
-	cout << multiplicacao(num1, num2) << endl;
+	cout << somasucessivas(num1, num2) << endl;
 	
 	return 0;
 }
