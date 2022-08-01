@@ -2,10 +2,11 @@
 using namespace std;
 
 string romano(int a){
-	int i = 0;
+	int i = 0, dezenas, unidades;
 	while(i < a/50){
-		return "X";
-		i++;
+		dezenas++;
+	}if(dezenas == 4){
+		
 	}
 }
 

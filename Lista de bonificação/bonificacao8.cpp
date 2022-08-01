@@ -2,28 +2,29 @@
 using namespace std;
 
 int maior (int a, int b){
-    if(b > a){
-        return b;
-    }else if(a >= b){
+    if(a >= b){
         return a;
+    }else{
+        return b;
     }
 }
 
 int main (){
-    char continua;
-    int i = 0, num1, aux, resultado;
-
+    int num1, maiorn;
+    char continua = 'S';
+    
     cin >> num1 >> continua;
 
-   while(continua == 'S'){
-    aux = num1;
-    cin >> num1;
-    resultado = maior(num1, aux)
-    cin >> continua;
-   }
-    
-    cout << maior(num1, aux)
+    maiorn = num1;
 
+    maiorn = maior(maiorn, num1);
+
+    while(continua != 'N'){
+        cin >> num1 >> continua;
+        maiorn = maior(maiorn, num1);
+    }
+
+    cout << maiorn << endl;
 
     return 0;
 }
