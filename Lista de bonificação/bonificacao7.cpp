@@ -2,15 +2,19 @@
 using namespace std;
 
 string romano(int a){
-	if(a == 50){
-		return L;
-	}else if(a % 10 == 0){
-		dezenas = a/10;
-		unidades = a%10;
-		if(
-		
+	int i = 0;
+	while(i < a/50){
+		return "X";
+		i++;
+	}
+}
 
 int main (){
+	int num;
 	
+	cin >> num;
+
+	cout << romano(num) << endl;
+
 	return 0;
 }
