@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
 
-
 int main (){
     string frase;
+    int tamanho;
     int vogais = 0;
 
-    getline(cin,frase);
+    cin >> frase;
 
-    for(int i = 0;i < frase.size();i++){
+    tamanho = frase.size();
+
+    for(int i = 0;i < tamanho;i++){
         if(frase[i] == 'a' or frase[i] == 'e' or frase[i] == 'i' or frase[i] == 'o' or frase[i] == 'u')
             vogais++;
     }

@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int apaga(int vet[], int tam){
+int substituir(int vet[], int tam){
     int validos = 0;
     for(int i = 0;i < tam;i++){
         if(vet[i] % 3 == 0){
@@ -16,19 +16,26 @@ int apaga(int vet[], int tam){
     return validos;
 }
 
-int ajeita(int vet[], int tam){
-    int vetnovo[tam];
-    for(int i = 0;i < tam;i++){
-        if(vet[i] != -1){
-            vetnovo[i] = vet[i];
+void apaga(int vet[], int tam, int valido){
+    int aux = 0;
+    for(int i = 0;i < (tam-valido);i++){
+        for(int i = 0;i < tam;i++){
+            if(vet[i] == -1){
+                aux = vet[i+1];
+                vet[i+1] = vet[i];
+                vet[i] = aux;
+            }
         }
     }
-    return vetnovo[3];
-}
+    for(int i = 0;i < valido;i++){
+        cout << vet[i] << " ";
+    }
+    cout << endl;
+}   
 
 int main (){
     int num;
-    unsigned tamanho;
+    int tamanho, valido;
 
     cin >> tamanho;
 
@@ -39,11 +46,11 @@ int main (){
         vetor[i] = num;
     }
 
-    cout << apaga(vetor, tamanho) << endl;
+    valido = substituir(vetor, tamanho);
 
-    cout << ajeita(vetor, tamanho) << endl;
+    apaga(vetor, tamanho, valido);
+    
+    cout << valido << endl;
 
-    
-    
     return 0;
 }
